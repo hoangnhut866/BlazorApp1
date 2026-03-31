@@ -1,0 +1,101 @@
+@page "/login"
+@layout Layout.MainLayout
+
+@inject IAuthService AuthService
+@inject NavigationManager Navigation
+@inject AuthenticationStateProvider AuthStateProvider
+
+<PageTitle>Login</PageTitle>
+
+<div class="container">
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-5">
+            <div class="card shadow-sm">
+                <div class="card-body p-4">
+                    <h3 class="card-title text-center mb-4">Sign In</h3>
+
+                    <EditForm Model="loginModel" OnValidSubmit="HandleLogin">
+                        <DataAnnotationsValidator />
+
+                        <div class="mb-3">
+                            <label class="form-label" for="email">Email</label>
+                            <InputText id="email"
+                                       class="form-control"
+                                       @bind-Value="loginModel.Email"
+                                       placeholder="you@example.com"
+                                       autocomplete="username" />
+                            <ValidationMessage For="() => loginModel.Email" class="text-danger small" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label" for="password">Password</label>
+                            <InputText id="password"
+                                       type="password"
+                                       class="form-control"
+                                       @bind-Value="loginModel.Password"
+                                       placeholder="••••••••"
+                                       autocomplete="current-password" />
+                            <ValidationMessage For="() => loginModel.Password" class="text-danger small" />
+                        </div>
+
+                        @if (errorMessage is not null)
+                        {
+                            <div class="alert alert-danger py-2">@errorMessage</div>
+                        }
+
+                        <div class="d-grid mt-3">
+                            <button type="submit" class="btn btn-primary" disabled="@isLoading">
+                                @if (isLoading)
+                                {
+                                    <span class="spinner-border spinner-border-sm me-2" role="status"></span>
+                                    <span>Signing in…</span>
+                                }
+                                else
+                                {
+                                    <span>Sign In</span>
+                                }
+                            </button>
+                        </div>
+                    </EditForm>
+                </div>
+            </div>
+
+            <p class="text-center text-muted mt-3 small">
+                Default credentials — Admin: <code>admin@example.com / Admin@123!</code><br />
+                Member: <code>member@example.com / Member@123!</code>
+            </p>
+        </div>
+    </div>
+</div>
+
+@code {
+    private LoginRequest loginModel = new();
+    private string? errorMessage;
+    private bool isLoading;
+
+    [SupplyParameterFromQuery]
+    private string? ReturnUrl { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        // If the user is already authenticated, send them away.
+        var state = await AuthStateProvider.GetAuthenticationStateAsync();
+        if (state.User.Identity?.IsAuthenticated == true)
+            Navigation.NavigateTo(ReturnUrl ?? "/", replace: true);
+    }
+
+    private async Task HandleLogin()
+    {
+        isLoading = true;
+        errorMessage = null;
+
+        var (success, error) = await AuthService.LoginAsync(loginModel.Email, loginModel.Password);
+
+        if (success)
+            Navigation.NavigateTo(ReturnUrl ?? "/", replace: true);
+        else
+            errorMessage = error;
+
+        isLoading = false;
+    }
+}

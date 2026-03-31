@@ -1,0 +1,48 @@
+@inherits LayoutComponentBase
+
+@inject IAuthService AuthService
+@inject NavigationManager Navigation
+
+<div class="page">
+    <div class="sidebar">
+        <NavMenu />
+    </div>
+
+    <main>
+        <div class="top-row px-4 d-flex align-items-center justify-content-end gap-2">
+            <AuthorizeView>
+                <Authorized>
+                    <span class="text-muted small">
+                        Signed in as <strong>@context.User.Identity?.Name</strong>
+                        @if (context.User.IsInRole("Admin"))
+                        {
+                            <span class="badge bg-danger ms-1">Admin</span>
+                        }
+                        else
+                        {
+                            <span class="badge bg-secondary ms-1">Member</span>
+                        }
+                    </span>
+                    <button class="btn btn-sm btn-outline-secondary" @onclick="HandleLogout">
+                        Logout
+                    </button>
+                </Authorized>
+                <NotAuthorized>
+                    <a href="login" class="btn btn-sm btn-outline-primary">Login</a>
+                </NotAuthorized>
+            </AuthorizeView>
+        </div>
+
+        <article class="content px-4">
+            @Body
+        </article>
+    </main>
+</div>
+
+@code {
+    private async Task HandleLogout()
+    {
+        await AuthService.LogoutAsync();
+        Navigation.NavigateTo("/login", forceLoad: false);
+    }
+}

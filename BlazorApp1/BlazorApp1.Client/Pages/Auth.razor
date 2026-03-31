@@ -1,14 +1,17 @@
 ﻿@page "/auth"
 
 @using Microsoft.AspNetCore.Authorization
-
 @attribute [Authorize]
-@rendermode InteractiveWebAssembly
 
 <PageTitle>Auth</PageTitle>
 
 <h1>You are authenticated</h1>
 
 <AuthorizeView>
-    Hello @context.User.Identity?.Name!
+    <Authorized>
+        <p>Hello, <strong>@context.User.Identity?.Name</strong>!</p>
+        <p>Your roles: <strong>@string.Join(", ", context.User.Claims
+            .Where(c => c.Type == System.Security.Claims.ClaimTypes.Role)
+            .Select(c => c.Value))</strong></p>
+    </Authorized>
 </AuthorizeView>

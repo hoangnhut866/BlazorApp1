@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "8NWCNVzpJy4=",
+  "dgSpecHash": "JR+np3zIt6A=",
   "success": true,
   "projectFilePath": "D:\\FPT POLY\\68. Lập trình Csharp6\\BaiLab\\BlazorApp1\\BlazorApp1\\BlazorApp1.Client\\BlazorApp1.Client.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\hoang\\.nuget\\packages\\blazored.localstorage\\4.5.0\\blazored.localstorage.4.5.0.nupkg.sha512",
     "C:\\Users\\hoang\\.nuget\\packages\\microsoft.aspnetcore.app.internal.assets\\10.0.5\\microsoft.aspnetcore.app.internal.assets.10.0.5.nupkg.sha512",
     "C:\\Users\\hoang\\.nuget\\packages\\microsoft.aspnetcore.authorization\\10.0.5\\microsoft.aspnetcore.authorization.10.0.5.nupkg.sha512",
     "C:\\Users\\hoang\\.nuget\\packages\\microsoft.aspnetcore.components\\10.0.5\\microsoft.aspnetcore.components.10.0.5.nupkg.sha512",
@@ -13,6 +14,7 @@
     "C:\\Users\\hoang\\.nuget\\packages\\microsoft.aspnetcore.components.web\\10.0.5\\microsoft.aspnetcore.components.web.10.0.5.nupkg.sha512",
     "C:\\Users\\hoang\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly\\10.0.5\\microsoft.aspnetcore.components.webassembly.10.0.5.nupkg.sha512",
     "C:\\Users\\hoang\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly.authentication\\10.0.5\\microsoft.aspnetcore.components.webassembly.authentication.10.0.5.nupkg.sha512",
+    "C:\\Users\\hoang\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly.devserver\\10.0.5\\microsoft.aspnetcore.components.webassembly.devserver.10.0.5.nupkg.sha512",
     "C:\\Users\\hoang\\.nuget\\packages\\microsoft.aspnetcore.metadata\\10.0.5\\microsoft.aspnetcore.metadata.10.0.5.nupkg.sha512",
     "C:\\Users\\hoang\\.nuget\\packages\\microsoft.dotnet.hotreload.webassembly.browser\\10.0.201\\microsoft.dotnet.hotreload.webassembly.browser.10.0.201.nupkg.sha512",
     "C:\\Users\\hoang\\.nuget\\packages\\microsoft.extensions.configuration\\10.0.5\\microsoft.extensions.configuration.10.0.5.nupkg.sha512",
