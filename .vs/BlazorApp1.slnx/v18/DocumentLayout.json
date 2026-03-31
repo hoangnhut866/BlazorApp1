@@ -1,7 +1,24 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\FPT POLY\\68. L\u1EADp tr\u00ECnh Csharp6\\BaiLab\\BlazorApp1\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{91239D22-9856-35D7-36FE-67205FA361CA}|BlazorApp1\\BlazorApp1.Api\\BlazorApp1.Api.csproj|d:\\fpt poly\\68. l\u1EADp tr\u00ECnh csharp6\\bailab\\blazorapp1\\blazorapp1\\blazorapp1.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{91239D22-9856-35D7-36FE-67205FA361CA}|BlazorApp1\\BlazorApp1.Api\\BlazorApp1.Api.csproj|solutionrelative:blazorapp1\\blazorapp1.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91239D22-9856-35D7-36FE-67205FA361CA}|BlazorApp1\\BlazorApp1.Api\\BlazorApp1.Api.csproj|d:\\fpt poly\\68. l\u1EADp tr\u00ECnh csharp6\\bailab\\blazorapp1\\blazorapp1\\blazorapp1.api\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91239D22-9856-35D7-36FE-67205FA361CA}|BlazorApp1\\BlazorApp1.Api\\BlazorApp1.Api.csproj|solutionrelative:blazorapp1\\blazorapp1.api\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91239D22-9856-35D7-36FE-67205FA361CA}|BlazorApp1\\BlazorApp1.Api\\BlazorApp1.Api.csproj|d:\\fpt poly\\68. l\u1EADp tr\u00ECnh csharp6\\bailab\\blazorapp1\\blazorapp1\\blazorapp1.api\\services\\databaseseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91239D22-9856-35D7-36FE-67205FA361CA}|BlazorApp1\\BlazorApp1.Api\\BlazorApp1.Api.csproj|solutionrelative:blazorapp1\\blazorapp1.api\\services\\databaseseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91239D22-9856-35D7-36FE-67205FA361CA}|BlazorApp1\\BlazorApp1.Api\\BlazorApp1.Api.csproj|d:\\fpt poly\\68. l\u1EADp tr\u00ECnh csharp6\\bailab\\blazorapp1\\blazorapp1\\blazorapp1.api\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91239D22-9856-35D7-36FE-67205FA361CA}|BlazorApp1\\BlazorApp1.Api\\BlazorApp1.Api.csproj|solutionrelative:blazorapp1\\blazorapp1.api\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -18,6 +35,58 @@
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\FPT POLY\\68. L\u1EADp tr\u00ECnh Csharp6\\BaiLab\\BlazorApp1\\BlazorApp1\\BlazorApp1.Api\\appsettings.json",
+              "RelativeDocumentMoniker": "BlazorApp1\\BlazorApp1.Api\\appsettings.json",
+              "ToolTip": "D:\\FPT POLY\\68. L\u1EADp tr\u00ECnh Csharp6\\BaiLab\\BlazorApp1\\BlazorApp1\\BlazorApp1.Api\\appsettings.json",
+              "RelativeToolTip": "BlazorApp1\\BlazorApp1.Api\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-03-31T11:37:26.72Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProductsController.cs",
+              "DocumentMoniker": "D:\\FPT POLY\\68. L\u1EADp tr\u00ECnh Csharp6\\BaiLab\\BlazorApp1\\BlazorApp1\\BlazorApp1.Api\\Controllers\\ProductsController.cs",
+              "RelativeDocumentMoniker": "BlazorApp1\\BlazorApp1.Api\\Controllers\\ProductsController.cs",
+              "ToolTip": "D:\\FPT POLY\\68. L\u1EADp tr\u00ECnh Csharp6\\BaiLab\\BlazorApp1\\BlazorApp1\\BlazorApp1.Api\\Controllers\\ProductsController.cs",
+              "RelativeToolTip": "BlazorApp1\\BlazorApp1.Api\\Controllers\\ProductsController.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAYwE8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-31T11:29:33.009Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Product.cs",
+              "DocumentMoniker": "D:\\FPT POLY\\68. L\u1EADp tr\u00ECnh Csharp6\\BaiLab\\BlazorApp1\\BlazorApp1\\BlazorApp1.Api\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "BlazorApp1\\BlazorApp1.Api\\Models\\Product.cs",
+              "ToolTip": "D:\\FPT POLY\\68. L\u1EADp tr\u00ECnh Csharp6\\BaiLab\\BlazorApp1\\BlazorApp1\\BlazorApp1.Api\\Models\\Product.cs",
+              "RelativeToolTip": "BlazorApp1\\BlazorApp1.Api\\Models\\Product.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-31T11:28:42.609Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DatabaseSeeder.cs",
+              "DocumentMoniker": "D:\\FPT POLY\\68. L\u1EADp tr\u00ECnh Csharp6\\BaiLab\\BlazorApp1\\BlazorApp1\\BlazorApp1.Api\\Services\\DatabaseSeeder.cs",
+              "RelativeDocumentMoniker": "BlazorApp1\\BlazorApp1.Api\\Services\\DatabaseSeeder.cs",
+              "ToolTip": "D:\\FPT POLY\\68. L\u1EADp tr\u00ECnh Csharp6\\BaiLab\\BlazorApp1\\BlazorApp1\\BlazorApp1.Api\\Services\\DatabaseSeeder.cs",
+              "RelativeToolTip": "BlazorApp1\\BlazorApp1.Api\\Services\\DatabaseSeeder.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-31T11:25:49.982Z",
+              "EditorCaption": ""
             }
           ]
         }

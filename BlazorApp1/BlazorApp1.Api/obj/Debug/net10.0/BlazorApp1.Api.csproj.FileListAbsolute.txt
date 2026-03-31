@@ -18,7 +18,6 @@ D:\FPT POLY\68. Lập trình Csharp6\BaiLab\BlazorApp1\BlazorApp1\BlazorApp1.Api
 D:\FPT POLY\68. Lập trình Csharp6\BaiLab\BlazorApp1\BlazorApp1\BlazorApp1.Api\bin\Debug\net10.0\Humanizer.dll
 D:\FPT POLY\68. Lập trình Csharp6\BaiLab\BlazorApp1\BlazorApp1\BlazorApp1.Api\bin\Debug\net10.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 D:\FPT POLY\68. Lập trình Csharp6\BaiLab\BlazorApp1\BlazorApp1\BlazorApp1.Api\bin\Debug\net10.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
-D:\FPT POLY\68. Lập trình Csharp6\BaiLab\BlazorApp1\BlazorApp1\BlazorApp1.Api\bin\Debug\net10.0\Microsoft.AspNetCore.OpenApi.dll
 D:\FPT POLY\68. Lập trình Csharp6\BaiLab\BlazorApp1\BlazorApp1\BlazorApp1.Api\bin\Debug\net10.0\Microsoft.Bcl.AsyncInterfaces.dll
 D:\FPT POLY\68. Lập trình Csharp6\BaiLab\BlazorApp1\BlazorApp1\BlazorApp1.Api\bin\Debug\net10.0\Microsoft.Bcl.Cryptography.dll
 D:\FPT POLY\68. Lập trình Csharp6\BaiLab\BlazorApp1\BlazorApp1\BlazorApp1.Api\bin\Debug\net10.0\Microsoft.Build.Framework.dll
@@ -159,3 +158,7 @@ D:\FPT POLY\68. Lập trình Csharp6\BaiLab\BlazorApp1\BlazorApp1\BlazorApp1.Api
 D:\FPT POLY\68. Lập trình Csharp6\BaiLab\BlazorApp1\BlazorApp1\BlazorApp1.Api\obj\Debug\net10.0\BlazorApp1.Api.genruntimeconfig.cache
 D:\FPT POLY\68. Lập trình Csharp6\BaiLab\BlazorApp1\BlazorApp1\BlazorApp1.Api\obj\Debug\net10.0\ref\BlazorApp1.Api.dll
 D:\FPT POLY\68. Lập trình Csharp6\BaiLab\BlazorApp1\BlazorApp1\BlazorApp1.Api\obj\Debug\net10.0\BlazorApp1.Api.sourcelink.json
+D:\FPT POLY\68. Lập trình Csharp6\BaiLab\BlazorApp1\BlazorApp1\BlazorApp1.Api\bin\Debug\net10.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\FPT POLY\68. Lập trình Csharp6\BaiLab\BlazorApp1\BlazorApp1\BlazorApp1.Api\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\FPT POLY\68. Lập trình Csharp6\BaiLab\BlazorApp1\BlazorApp1\BlazorApp1.Api\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\FPT POLY\68. Lập trình Csharp6\BaiLab\BlazorApp1\BlazorApp1\BlazorApp1.Api\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt

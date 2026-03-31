@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -67,9 +68,46 @@ builder.Services.AddCors(options =>
     });
 });
 
-// ─── Controllers / OpenAPI ────────────────────────────────────────────────────
+// ─── Controllers / Swagger ───────────────────────────────────────────────────
 builder.Services.AddControllers();
-builder.Services.AddOpenApi();
+
+builder.Services.AddSwaggerGen(options =>
+{
+    options.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Title = "BlazorApp1 API",
+        Version = "v1",
+        Description = "ASP.NET Core Web API with JWT authentication"
+    });
+
+    // Define the Bearer security scheme
+    var jwtScheme = new OpenApiSecurityScheme
+    {
+        Name = "Authorization",
+        Type = SecuritySchemeType.Http,
+        Scheme = "bearer",
+        BearerFormat = "JWT",
+        In = ParameterLocation.Header,
+        Description = "Enter your JWT token. Example: \"eyJhbGci...\""
+    };
+    options.AddSecurityDefinition("Bearer", jwtScheme);
+
+    // Require the Bearer token on all endpoints
+    options.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference
+                {
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "Bearer"
+                }
+            },
+            Array.Empty<string>()
+        }
+    });
+});
 
 // ─────────────────────────────────────────────────────────────────────────────
 var app = builder.Build();
@@ -83,7 +121,12 @@ if (app.Environment.IsDevelopment())
         await db.Database.MigrateAsync();
     }
 
-    app.MapOpenApi();
+    app.UseSwagger();
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "BlazorApp1 API v1");
+        c.RoutePrefix = "swagger";
+    });
 }
 
 // ─── Seed roles and default users ────────────────────────────────────────────

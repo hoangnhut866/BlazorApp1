@@ -1,0 +1,320 @@
+@page "/products"
+
+@using Microsoft.AspNetCore.Authorization
+@attribute [Authorize]
+
+@inject IProductService ProductService
+@inject NavigationManager Navigation
+
+<PageTitle>Products</PageTitle>
+
+<div class="container py-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h3 class="mb-0">Products</h3>
+
+        <AuthorizeView Roles="Admin">
+            <Authorized>
+                <button class="btn btn-primary" @onclick="OpenAddModal">
+                    + Add Product
+                </button>
+            </Authorized>
+        </AuthorizeView>
+    </div>
+
+    @if (globalError is not null)
+    {
+        <div class="alert alert-danger alert-dismissible">
+            @globalError
+            <button type="button" class="btn-close" @onclick="() => globalError = null"></button>
+        </div>
+    }
+
+    @if (isLoading)
+    {
+        <div class="text-center py-5">
+            <div class="spinner-border text-primary"></div>
+            <p class="mt-2 text-muted">Loading products…</p>
+        </div>
+    }
+    else if (products is not null)
+    {
+        @if (products.Count == 0)
+        {
+            <div class="alert alert-info">No products found.</div>
+        }
+        else
+        {
+            <div class="table-responsive">
+                <table class="table table-hover align-middle">
+                    <thead class="table-light">
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Description</th>
+                            <AuthorizeView Roles="Admin">
+                                <Authorized>
+                                    <th class="text-end">Actions</th>
+                                </Authorized>
+                            </AuthorizeView>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var product in products)
+                        {
+                            <tr>
+                                <td>@product.Id</td>
+                                <td>@product.Name</td>
+                                <td>@product.Price.ToString("C")</td>
+                                <td>@(product.Description ?? "—")</td>
+                                <AuthorizeView Roles="Admin">
+                                    <Authorized>
+                                        <td class="text-end">
+                                            <button class="btn btn-sm btn-outline-secondary me-1"
+                                                    @onclick="() => OpenEditModal(product)">
+                                                Edit
+                                            </button>
+                                            <button class="btn btn-sm btn-outline-danger"
+                                                    @onclick="() => OpenDeleteConfirm(product)">
+                                                Delete
+                                            </button>
+                                        </td>
+                                    </Authorized>
+                                </AuthorizeView>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+    }
+</div>
+
+<!-- ── Add / Edit Modal ──────────────────────────────────────────────────── -->
+@if (showFormModal)
+{
+    <div class="modal fade show d-block" tabindex="-1" style="background:rgba(0,0,0,.45)">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">@(isEditing ? "Edit Product" : "Add Product")</h5>
+                    <button type="button" class="btn-close" @onclick="CloseModals"></button>
+                </div>
+                <div class="modal-body">
+                    @if (formError is not null)
+                    {
+                        <div class="alert alert-danger py-2">@formError</div>
+                    }
+                    <EditForm Model="formModel" OnValidSubmit="HandleFormSubmit">
+                        <DataAnnotationsValidator />
+
+                        <div class="mb-3">
+                            <label class="form-label">Name</label>
+                            <InputText class="form-control" @bind-Value="formModel.Name" />
+                            <ValidationMessage For="() => formModel.Name" class="text-danger small" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Price</label>
+                            <InputNumber class="form-control" @bind-Value="formModel.Price" />
+                            <ValidationMessage For="() => formModel.Price" class="text-danger small" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Description <span class="text-muted small">(optional)</span></label>
+                            <InputTextArea class="form-control" rows="3" @bind-Value="formModel.Description" />
+                            <ValidationMessage For="() => formModel.Description" class="text-danger small" />
+                        </div>
+
+                        <div class="modal-footer px-0 pb-0">
+                            <button type="button" class="btn btn-secondary" @onclick="CloseModals">
+                                Cancel
+                            </button>
+                            <button type="submit" class="btn btn-primary" disabled="@isSaving">
+                                @if (isSaving)
+                                {
+                                    <span class="spinner-border spinner-border-sm me-1"></span>
+                                }
+                                @(isEditing ? "Save Changes" : "Create")
+                            </button>
+                        </div>
+                    </EditForm>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<!-- ── Delete Confirmation Modal ─────────────────────────────────────────── -->
+@if (showDeleteModal && deleteTarget is not null)
+{
+    <div class="modal fade show d-block" tabindex="-1" style="background:rgba(0,0,0,.45)">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Delete Product</h5>
+                    <button type="button" class="btn-close" @onclick="CloseModals"></button>
+                </div>
+                <div class="modal-body">
+                    @if (formError is not null)
+                    {
+                        <div class="alert alert-danger py-2">@formError</div>
+                    }
+                    <p>Delete <strong>@deleteTarget.Name</strong>? This cannot be undone.</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" @onclick="CloseModals">Cancel</button>
+                    <button class="btn btn-danger" @onclick="HandleDelete" disabled="@isSaving">
+                        @if (isSaving)
+                        {
+                            <span class="spinner-border spinner-border-sm me-1"></span>
+                        }
+                        Delete
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@code {
+    private List<Product>? products;
+    private bool isLoading = true;
+    private bool isSaving;
+    private string? globalError;
+    private string? formError;
+
+    // ── Modal state ──────────────────────────────────────────────────────────
+    private bool showFormModal;
+    private bool showDeleteModal;
+    private bool isEditing;
+
+    private Product formModel = new();
+    private Product? deleteTarget;
+
+    // ── Lifecycle ────────────────────────────────────────────────────────────
+    protected override async Task OnInitializedAsync()
+        => await LoadProductsAsync();
+
+    private async Task LoadProductsAsync()
+    {
+        isLoading = true;
+        globalError = null;
+
+        var result = await ProductService.GetAllAsync();
+
+        if (result.IsUnauthorized)
+        {
+            Navigation.NavigateTo("/login?returnUrl=/products", forceLoad: false);
+            return;
+        }
+
+        if (!result.IsSuccess)
+        {
+            globalError = result.Error;
+        }
+        else
+        {
+            products = result.Data;
+        }
+
+        isLoading = false;
+    }
+
+    // ── Modal helpers ────────────────────────────────────────────────────────
+    private void OpenAddModal()
+    {
+        formModel = new();
+        isEditing = false;
+        formError = null;
+        showFormModal = true;
+    }
+
+    private void OpenEditModal(Product p)
+    {
+        formModel = new Product
+        {
+            Id = p.Id,
+            Name = p.Name,
+            Price = p.Price,
+            Description = p.Description
+        };
+        isEditing = true;
+        formError = null;
+        showFormModal = true;
+    }
+
+    private void OpenDeleteConfirm(Product p)
+    {
+        deleteTarget = p;
+        formError = null;
+        showDeleteModal = true;
+    }
+
+    private void CloseModals()
+    {
+        showFormModal = false;
+        showDeleteModal = false;
+        formError = null;
+    }
+
+    // ── CRUD operations ──────────────────────────────────────────────────────
+    private async Task HandleFormSubmit()
+    {
+        isSaving = true;
+        formError = null;
+
+        if (isEditing)
+        {
+            var result = await ProductService.UpdateAsync(formModel);
+            if (!result.IsSuccess)
+            {
+                formError = result.Error;
+                isSaving = false;
+                return;
+            }
+        }
+        else
+        {
+            var result = await ProductService.CreateAsync(formModel);
+            if (!result.IsSuccess)
+            {
+                formError = result.Error;
+                isSaving = false;
+                return;
+            }
+        }
+
+        CloseModals();
+        await LoadProductsAsync();
+        isSaving = false;
+    }
+
+    private async Task HandleDelete()
+    {
+        if (deleteTarget is null) return;
+
+        isSaving = true;
+        formError = null;
+
+        var result = await ProductService.DeleteAsync(deleteTarget.Id);
+
+        if (result.IsForbidden)
+        {
+            formError = result.Error;
+            isSaving = false;
+            return;
+        }
+
+        if (!result.IsSuccess)
+        {
+            formError = result.Error;
+            isSaving = false;
+            return;
+        }
+
+        CloseModals();
+        await LoadProductsAsync();
+        isSaving = false;
+    }
+}

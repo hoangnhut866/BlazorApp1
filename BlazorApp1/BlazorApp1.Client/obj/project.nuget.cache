@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "JR+np3zIt6A=",
+  "dgSpecHash": "6NWyGquoTOo=",
   "success": true,
   "projectFilePath": "D:\\FPT POLY\\68. Lập trình Csharp6\\BaiLab\\BlazorApp1\\BlazorApp1\\BlazorApp1.Client\\BlazorApp1.Client.csproj",
   "expectedPackageFiles": [
@@ -29,6 +29,7 @@
     "C:\\Users\\hoang\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\10.0.5\\microsoft.extensions.fileproviders.abstractions.10.0.5.nupkg.sha512",
     "C:\\Users\\hoang\\.nuget\\packages\\microsoft.extensions.fileproviders.physical\\10.0.5\\microsoft.extensions.fileproviders.physical.10.0.5.nupkg.sha512",
     "C:\\Users\\hoang\\.nuget\\packages\\microsoft.extensions.filesystemglobbing\\10.0.5\\microsoft.extensions.filesystemglobbing.10.0.5.nupkg.sha512",
+    "C:\\Users\\hoang\\.nuget\\packages\\microsoft.extensions.http\\10.0.0\\microsoft.extensions.http.10.0.0.nupkg.sha512",
     "C:\\Users\\hoang\\.nuget\\packages\\microsoft.extensions.logging\\10.0.5\\microsoft.extensions.logging.10.0.5.nupkg.sha512",
     "C:\\Users\\hoang\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\10.0.5\\microsoft.extensions.logging.abstractions.10.0.5.nupkg.sha512",
     "C:\\Users\\hoang\\.nuget\\packages\\microsoft.extensions.options\\10.0.5\\microsoft.extensions.options.10.0.5.nupkg.sha512",
