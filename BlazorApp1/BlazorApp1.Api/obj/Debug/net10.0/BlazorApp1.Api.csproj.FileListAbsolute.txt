@@ -158,3 +158,4 @@ D:\FPT POLY\68. Lập trình Csharp6\BaiLab\BlazorApp1\BlazorApp1\BlazorApp1.Api
 D:\FPT POLY\68. Lập trình Csharp6\BaiLab\BlazorApp1\BlazorApp1\BlazorApp1.Api\obj\Debug\net10.0\BlazorApp1.Api.pdb
 D:\FPT POLY\68. Lập trình Csharp6\BaiLab\BlazorApp1\BlazorApp1\BlazorApp1.Api\obj\Debug\net10.0\BlazorApp1.Api.genruntimeconfig.cache
 D:\FPT POLY\68. Lập trình Csharp6\BaiLab\BlazorApp1\BlazorApp1\BlazorApp1.Api\obj\Debug\net10.0\ref\BlazorApp1.Api.dll
+D:\FPT POLY\68. Lập trình Csharp6\BaiLab\BlazorApp1\BlazorApp1\BlazorApp1.Api\obj\Debug\net10.0\BlazorApp1.Api.sourcelink.json
