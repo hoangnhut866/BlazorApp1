@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "i2SqofogvOM=",
+  "dgSpecHash": "DZr3memIUag=",
   "success": true,
   "projectFilePath": "D:\\FPT POLY\\68. Lập trình Csharp6\\BaiLab\\BlazorApp1\\BlazorApp1\\BlazorApp1.Api\\BlazorApp1.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\hoang\\.nuget\\packages\\azure.core\\1.47.1\\azure.core.1.47.1.nupkg.sha512",
     "C:\\Users\\hoang\\.nuget\\packages\\azure.identity\\1.14.2\\azure.identity.1.14.2.nupkg.sha512",
+    "C:\\Users\\hoang\\.nuget\\packages\\fluentvalidation\\12.1.1\\fluentvalidation.12.1.1.nupkg.sha512",
+    "C:\\Users\\hoang\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\12.1.1\\fluentvalidation.dependencyinjectionextensions.12.1.1.nupkg.sha512",
     "C:\\Users\\hoang\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\hoang\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\10.0.5\\microsoft.aspnetcore.authentication.jwtbearer.10.0.5.nupkg.sha512",
     "C:\\Users\\hoang\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\10.0.5\\microsoft.aspnetcore.identity.entityframeworkcore.10.0.5.nupkg.sha512",

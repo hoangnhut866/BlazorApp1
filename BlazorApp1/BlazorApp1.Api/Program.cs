@@ -1,6 +1,8 @@
 using System.Text;
 using BlazorApp1.Api.Data;
 using BlazorApp1.Api.Services;
+using BlazorApp1.Api.Validators;
+using FluentValidation;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -67,6 +69,9 @@ builder.Services.AddCors(options =>
               .AllowAnyHeader();
     });
 });
+
+// ─── FluentValidation ─────────────────────────────────────────────────────────
+builder.Services.AddValidatorsFromAssemblyContaining<CreateProductDtoValidator>();
 
 // ─── Controllers / Swagger ───────────────────────────────────────────────────
 builder.Services.AddControllers();

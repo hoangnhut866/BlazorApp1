@@ -88,7 +88,9 @@ public class JwtAuthStateProvider : AuthenticationStateProvider
             }
             else
             {
-                claims.Add(new Claim(key, value.GetString() ?? value.ToString()));
+                claims.Add(new Claim(key, value.ValueKind == JsonValueKind.String
+                    ? (value.GetString() ?? string.Empty)
+                    : value.ToString()));
             }
         }
 

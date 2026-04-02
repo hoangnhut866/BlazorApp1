@@ -1093,13 +1093,6 @@ D:\FPT POLY\68. Lập trình Csharp6\BaiLab\BlazorApp1\BlazorApp1\BlazorApp1.Cli
 D:\FPT POLY\68. Lập trình Csharp6\BaiLab\BlazorApp1\BlazorApp1\BlazorApp1.Client\bin\Debug\net10.0\Microsoft.Extensions.Http.dll
 D:\FPT POLY\68. Lập trình Csharp6\BaiLab\BlazorApp1\BlazorApp1\BlazorApp1.Client\obj\Debug\net10.0\webcil\Microsoft.Extensions.Http.wasm
 D:\FPT POLY\68. Lập trình Csharp6\BaiLab\BlazorApp1\BlazorApp1\BlazorApp1.Client\obj\Debug\net10.0\compressed\p5if6z4egt-{0}-apre2arxjd-apre2arxjd.gz
-D:\FPT POLY\68. Lập trình Csharp6\BaiLab\BlazorApp1\BlazorApp1\BlazorApp1.Client\bin\Debug\net10.0\wwwroot\_framework\BlazorApp1.Client.kvwn1gciil.wasm
-D:\FPT POLY\68. Lập trình Csharp6\BaiLab\BlazorApp1\BlazorApp1\BlazorApp1.Client\bin\Debug\net10.0\wwwroot\_framework\BlazorApp1.Client.ee3qaenyyv.pdb
-D:\FPT POLY\68. Lập trình Csharp6\BaiLab\BlazorApp1\BlazorApp1\BlazorApp1.Client\bin\Debug\net10.0\wwwroot\_framework\BlazorApp1.Client.kvwn1gciil.wasm.gz
-D:\FPT POLY\68. Lập trình Csharp6\BaiLab\BlazorApp1\BlazorApp1\BlazorApp1.Client\bin\Debug\net10.0\wwwroot\_framework\BlazorApp1.Client.ee3qaenyyv.pdb.gz
-D:\FPT POLY\68. Lập trình Csharp6\BaiLab\BlazorApp1\BlazorApp1\BlazorApp1.Client\obj\Debug\net10.0\compressed\p9n3mvuadf-{0}-kvwn1gciil-kvwn1gciil.gz
-D:\FPT POLY\68. Lập trình Csharp6\BaiLab\BlazorApp1\BlazorApp1\BlazorApp1.Client\obj\Debug\net10.0\compressed\v8602ecvs2-{0}-ee3qaenyyv-ee3qaenyyv.gz
-D:\FPT POLY\68. Lập trình Csharp6\BaiLab\BlazorApp1\BlazorApp1\BlazorApp1.Client\obj\Debug\net10.0\compressed\yig6f5pkzq-{0}-0kj02enh5h-0kj02enh5h.gz
 D:\BlazorApp1\BlazorApp1\BlazorApp1.Client\bin\Debug\net10.0\BlazorApp1.Client.runtimeconfig.json
 D:\BlazorApp1\BlazorApp1\BlazorApp1.Client\bin\Debug\net10.0\wwwroot\_framework\blazor.webassembly.js
 D:\BlazorApp1\BlazorApp1\BlazorApp1.Client\bin\Debug\net10.0\wwwroot\_framework\Blazored.LocalStorage.12n6dz54qr.wasm
@@ -2202,3 +2195,10 @@ D:\BlazorApp1\BlazorApp1\BlazorApp1.Client\obj\Debug\net10.0\BlazorApp1.Client.d
 D:\BlazorApp1\BlazorApp1\BlazorApp1.Client\obj\Debug\net10.0\refint\BlazorApp1.Client.dll
 D:\BlazorApp1\BlazorApp1\BlazorApp1.Client\obj\Debug\net10.0\BlazorApp1.Client.pdb
 D:\BlazorApp1\BlazorApp1\BlazorApp1.Client\obj\Debug\net10.0\ref\BlazorApp1.Client.dll
+D:\FPT POLY\68. Lập trình Csharp6\BaiLab\BlazorApp1\BlazorApp1\BlazorApp1.Client\bin\Debug\net10.0\wwwroot\_framework\BlazorApp1.Client.fhp18m24gn.wasm
+D:\FPT POLY\68. Lập trình Csharp6\BaiLab\BlazorApp1\BlazorApp1\BlazorApp1.Client\bin\Debug\net10.0\wwwroot\_framework\BlazorApp1.Client.fu1xnana4h.pdb
+D:\FPT POLY\68. Lập trình Csharp6\BaiLab\BlazorApp1\BlazorApp1\BlazorApp1.Client\bin\Debug\net10.0\wwwroot\_framework\BlazorApp1.Client.fhp18m24gn.wasm.gz
+D:\FPT POLY\68. Lập trình Csharp6\BaiLab\BlazorApp1\BlazorApp1\BlazorApp1.Client\bin\Debug\net10.0\wwwroot\_framework\BlazorApp1.Client.fu1xnana4h.pdb.gz
+D:\FPT POLY\68. Lập trình Csharp6\BaiLab\BlazorApp1\BlazorApp1\BlazorApp1.Client\obj\Debug\net10.0\compressed\p9n3mvuadf-{0}-fhp18m24gn-fhp18m24gn.gz
+D:\FPT POLY\68. Lập trình Csharp6\BaiLab\BlazorApp1\BlazorApp1\BlazorApp1.Client\obj\Debug\net10.0\compressed\v8602ecvs2-{0}-fu1xnana4h-fu1xnana4h.gz
+D:\FPT POLY\68. Lập trình Csharp6\BaiLab\BlazorApp1\BlazorApp1\BlazorApp1.Client\obj\Debug\net10.0\compressed\yig6f5pkzq-{0}-vzrqntirmf-vzrqntirmf.gz
