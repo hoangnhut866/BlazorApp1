@@ -70,6 +70,7 @@ builder.Services.AddCors(options =>
 
 // ─── Controllers / Swagger ───────────────────────────────────────────────────
 builder.Services.AddControllers();
+builder.Services.AddProblemDetails();
 
 builder.Services.AddSwaggerGen(options =>
 {
@@ -111,6 +112,38 @@ builder.Services.AddSwaggerGen(options =>
 
 // ─────────────────────────────────────────────────────────────────────────────
 var app = builder.Build();
+
+// ─── Exception handling (detailed errors in Development) ────────────────────
+if (app.Environment.IsDevelopment())
+{
+    app.UseExceptionHandler(exceptionHandlerApp =>
+    {
+        exceptionHandlerApp.Run(async context =>
+        {
+            var exceptionFeature = context.Features.Get<Microsoft.AspNetCore.Diagnostics.IExceptionHandlerFeature>();
+            var exception = exceptionFeature?.Error;
+
+            context.Response.StatusCode = StatusCodes.Status500InternalServerError;
+            context.Response.ContentType = "application/problem+json";
+
+            var problem = new Microsoft.AspNetCore.Mvc.ProblemDetails
+            {
+                Status  = StatusCodes.Status500InternalServerError,
+                Title   = exception?.GetType().Name ?? "Internal Server Error",
+                Detail  = exception?.Message,
+                Instance = context.Request.Path
+            };
+            problem.Extensions["stackTrace"]    = exception?.StackTrace;
+            problem.Extensions["exceptionType"] = exception?.GetType().FullName;
+
+            await context.Response.WriteAsJsonAsync(problem);
+        });
+    });
+}
+else
+{
+    app.UseExceptionHandler();
+}
 
 // ─── Auto-migrate database in Development ────────────────────────────────────
 if (app.Environment.IsDevelopment())
